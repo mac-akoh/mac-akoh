@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/imageViewTransactionType"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_payment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:contentDescription="Transaction Type Icon"
+            tools:srcCompat="@tools:sample/avatars" />
+            <!-- Replace @drawable/ic_payment with actual icons for sent/received/failed etc. -->
+
+
+        <TextView
+            android:id="@+id/textViewTransactionDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Payment to Merchant XYZ"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/imageViewTransactionType"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/textViewTransactionAmount"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewTransactionDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="15 Oct 2023, 10:30 AM"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/imageViewTransactionType"
+            app:layout_constraintTop_toBottomOf="@id/textViewTransactionDescription"
+            app:layout_constraintEnd_toStartOf="@id/textViewTransactionStatus"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/textViewTransactionAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-$50.00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textViewTransactionDescription"
+            app:layout_constraintBottom_toBottomOf="@id/textViewTransactionDescription"
+            tools:textColor="@android:color/holo_red_dark"/> <!-- Example color -->
+
+        <TextView
+            android:id="@+id/textViewTransactionStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completed"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewTransactionAmount"
+            app:layout_constraintBottom_toBottomOf="@id/textViewTransactionDate"
+            app:layout_constraintBaseline_toBaselineOf="@id/textViewTransactionDate"
+            tools:textColor="@android:color/holo_green_dark"/> <!-- Example color -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
