@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.example.mobilepaymentapp'
+    compileSdk 33 // Target SDK, ensure you have this SDK version installed
+
+    defaultConfig {
+        applicationId "com.example.mobilepaymentapp"
+        minSdk 21 // Minimum SDK
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    // If you plan to use View Binding or Data Binding
+    // buildFeatures {
+    //     viewBinding true
+    // }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.1' // Check for latest stable version
+    implementation 'com.google.android.material:material:1.7.0' // Check for latest stable version
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // Check for latest stable version
+
+    // Firebase Bill of Materials (BoM) - Recommended way to manage Firebase library versions
+    // implementation platform('com.google.firebase:firebase-bom:31.0.2') // Check for latest version
+
+    // Firebase Authentication (Example, if you choose to use Firebase)
+    // implementation 'com.google.firebase:firebase-auth'
+    // implementation 'com.google.android.gms:play-services-auth:20.3.0' // For Google Sign In
+
+    // QR Code Libraries (ZXing) - Commented out for placeholder step
+    // implementation 'com.google.zxing:core:3.5.1' // For QR code generation logic
+    // implementation 'com.journeyapps:zxing-android-embedded:4.3.0' // For easy QR code scanning integration
+
+    // Firebase Cloud Messaging (FCM) - Commented out for placeholder step
+    // implementation platform('com.google.firebase:firebase-bom:32.7.0') // Check for latest BoM
+    // implementation 'com.google.firebase:firebase-messaging'
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // You will add more dependencies here for payment gateways, networking, image loading etc.
+    // e.g. Retrofit for networking, Glide/Picasso for image loading
+}
+
+// Apply the Google services Gradle plugin if using Firebase
+// apply plugin: 'com.google.gms.google-services' // Make sure this is at the bottom of this file

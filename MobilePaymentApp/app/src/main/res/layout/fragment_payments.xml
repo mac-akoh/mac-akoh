@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.payments.PaymentsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewPaymentsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payments &amp; Actions"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMakePaymentSimulated"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Make Payment (Simulated)"
+            android:layout_marginBottom="16dp"
+            app:icon="@drawable/ic_payment_24"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGenerateMyQr"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Generate My QR Code"
+            android:layout_marginBottom="16dp"
+            app:icon="@android:drawable/ic_menu_camera"/> <!-- Using a generic camera icon -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonScanQrToPay"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan QR to Pay"
+            android:layout_marginBottom="16dp"
+            app:icon="@android:drawable/ic_menu_crop"/> <!-- Using a generic crop/scan icon -->
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonNfcTapToPay"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NFC / Tap-to-Pay (Placeholder)"
+            app:icon="@android:drawable/ic_menu_send"/> <!-- Placeholder icon, could be specific NFC icon -->
+            <!-- Real NFC icon e.g. @drawable/ic_nfc (would need to be added) -->
+
+    </LinearLayout>
+</ScrollView>
